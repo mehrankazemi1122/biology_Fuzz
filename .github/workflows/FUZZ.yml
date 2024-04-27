@@ -20,6 +20,7 @@ jobs:
 
       - name: Verify Gobuster installation
         run: |
+          sudo apt-get -y install crunch
           git clone https://github.com/PortSwigger/param-miner.git
           curl -s https://wordlists-cdn.assetnote.io/data/manual/wordlist_with_underscores.txt > wlist2.txt
           crunch 1 4 abcdefghijklmnopqrstuvwxyz1234567890_-. > 0to4chars.txt
