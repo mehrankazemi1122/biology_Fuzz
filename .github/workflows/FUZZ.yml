@@ -25,6 +25,6 @@ jobs:
           curl -s https://wordlists-cdn.assetnote.io/data/manual/wordlist_with_underscores.txt > wlist2.txt
           crunch 1 4 abcdefghijklmnopqrstuvwxyz1234567890_-. > 0to4chars.txt
           cat wlist2.txt 0to4chars.txt | sort -u > full_wordlist.txt
-          gobuster fuzz -u "https://dnssec-analyzer-verisignlabs.gslb.verisign.com/FUZZ/" -w full_wordlist.txt -b 404,400 --exclude-length 239 --useragent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" -o output.txt -k -z
+          gobuster fuzz -u "https://gp.verisign.com/FUZZ" -w wlist2.txt -b 404,400 --useragent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" -o output.txt -k -z
           cat output.txt
 #        -t 1 --delay 105ms
