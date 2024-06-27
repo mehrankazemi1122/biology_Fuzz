@@ -24,7 +24,7 @@ jobs:
           git clone https://github.com/PortSwigger/param-miner.git
           curl -s https://wordlists-cdn.assetnote.io/data/manual/wordlist_with_underscores.txt > wlist2.txt
           
-          crunch 1 4 abcdefghijklmnopqrstuvwxyz1234567890_-. > 0to4chars.txt
+          crunch 1 3 abcdefghijklmnopqrstuvwxyz1234567890_-. > 1to3chars.txt
           
           curl -s https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-lowercase-2.3-big.txt > wlist1.txt
           
@@ -40,7 +40,7 @@ jobs:
           head all_dirs.txt
           head wlist1.txt
           
-          cat all_dirs.txt wlist1.txt wlist2.txt 0to4chars.txt | sort -u > full.txt
+          cat all_dirs.txt wlist1.txt wlist2.txt 1to3chars.txt | sort -u > full.txt
           
           cat wlist2.txt 0to4chars.txt | sort -u > full_wordlist.txt
           gobuster fuzz -u "https://acgpmg-selfcare.verisign.com/FUZZ" -w full.txt --no-error -b 404,400 --useragent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" -o output.txt -k -z
