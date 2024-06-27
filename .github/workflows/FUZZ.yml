@@ -43,6 +43,6 @@ jobs:
           cat all_dirs.txt wlist1.txt wlist2.txt 1to3chars.txt | sort -u > full.txt
           
           cat wlist2.txt 1to3chars.txt | sort -u > full_wordlist.txt
-          gobuster fuzz -u "https://mem-dr.verisign.com/FUZZ" -w full.txt --no-error -b 404,400,403 --useragent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" -o output.txt -k -z
+          gobuster fuzz -u "https://ote-login-otp.verisign.com/FUZZ" -w full.txt --no-error -b 404,400 --useragent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" -o output.txt -k -z
           cat output.txt
 #        -t 1 --delay 105mss
