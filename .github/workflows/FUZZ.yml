@@ -45,6 +45,6 @@ jobs:
           cat all_dirs.txt wlist1.txt wlist2.txt 1to3chars.txt | sort -u > full.txt
           
           cat wlist2.txt 1to3chars.txt | sort -u > full_wordlist.txt
-          gobuster fuzz -u "https://a.reymit.ir/FUZZ" -r -w words.txt --no-error -b 404 --useragent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" -o output.txt -k -t 2
+          gobuster fuzz -u "https://a.reymit.ir/FUZZ" -r -w words.txt --no-error -b 404 --useragent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" -o output.txt -k -z -t 2
           cat output.txt
 #        -t 1 --delay 105mss | --exclude-length 3363 
